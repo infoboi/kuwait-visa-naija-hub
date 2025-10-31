@@ -1,8 +1,11 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import kuwaitHero from "@/assets/kuwait-hero.jpg";
+import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 
 const Hero = () => {
+  const { ref: imageRef, isVisible: imageVisible } = useScrollAnimation({ threshold: 0.2 });
+  
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     element?.scrollIntoView({ behavior: 'smooth' });
@@ -13,7 +16,7 @@ const Hero = () => {
       <div className="container mx-auto px-4 py-20">
         <div className="grid lg:grid-cols-2 gap-16 items-center max-w-7xl mx-auto">
           {/* Text Content */}
-          <div className="space-y-8 animate-fade-in">
+          <div className="space-y-8 animate-fade-in-left">
             <div className="space-y-4">
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-light tracking-tight text-foreground">
                 Your Gateway to
@@ -60,12 +63,18 @@ const Hero = () => {
             </div>
           </div>
 
-          {/* Image */}
-          <div className="relative lg:h-[600px] h-[400px] rounded-2xl overflow-hidden shadow-medium">
+          {/* Image with Lazy Loading */}
+          <div 
+            ref={imageRef}
+            className={`relative lg:h-[600px] h-[400px] rounded-2xl overflow-hidden shadow-medium transition-all duration-1000 ${
+              imageVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-12'
+            }`}
+          >
             <img 
               src={kuwaitHero} 
-              alt="Kuwait City skyline" 
+              alt="Kuwait City skyline with modern towers at sunset" 
               className="w-full h-full object-cover"
+              loading="lazy"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
           </div>
