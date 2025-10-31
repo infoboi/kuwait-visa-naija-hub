@@ -1,70 +1,60 @@
-import { Plane, Mail, Phone, MapPin } from "lucide-react";
+import { Plane } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer className="bg-primary text-primary-foreground py-12">
+    <footer className="bg-foreground text-background py-16 border-t border-border">
       <div className="container mx-auto px-4">
-        <div className="grid md:grid-cols-4 gap-8 mb-8">
-          {/* Brand */}
-          <div>
-            <div className="flex items-center gap-2 mb-4">
-              <div className="w-10 h-10 rounded-full bg-accent flex items-center justify-center">
-                <Plane className="w-6 h-6 text-accent-foreground" />
+        <div className="max-w-7xl mx-auto">
+          <div className="grid md:grid-cols-4 gap-12 mb-12">
+            {/* Brand */}
+            <div className="space-y-4">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-full bg-background/10 flex items-center justify-center">
+                  <Plane className="w-5 h-5 text-background" />
+                </div>
+                <div className="font-medium">Kuwait Travel</div>
               </div>
-              <div>
-                <div className="font-bold">Kuwait Travel</div>
-                <div className="text-xs opacity-80">& Passport Services</div>
-              </div>
+              <p className="text-sm text-background/70 font-light leading-relaxed">
+                Your trusted partner for Kuwait travel and Nigerian passport services
+              </p>
             </div>
-            <p className="text-sm opacity-80">
-              Your trusted partner for Kuwait travel and Nigerian passport services
-            </p>
+
+            {/* Quick Links */}
+            <div>
+              <h4 className="font-medium mb-4">Quick Links</h4>
+              <ul className="space-y-3 text-sm text-background/70 font-light">
+                <li><a href="#services" className="hover:text-background transition-colors">Services</a></li>
+                <li><a href="#contact" className="hover:text-background transition-colors">Contact</a></li>
+                <li><a href="#" className="hover:text-background transition-colors">About</a></li>
+                <li><a href="#" className="hover:text-background transition-colors">FAQ</a></li>
+              </ul>
+            </div>
+
+            {/* Services */}
+            <div>
+              <h4 className="font-medium mb-4">Services</h4>
+              <ul className="space-y-3 text-sm text-background/70 font-light">
+                <li>Kuwait Travel</li>
+                <li>Passport Services</li>
+                <li>Visa Support</li>
+                <li>Travel Planning</li>
+              </ul>
+            </div>
+
+            {/* Contact */}
+            <div>
+              <h4 className="font-medium mb-4">Contact</h4>
+              <ul className="space-y-3 text-sm text-background/70 font-light">
+                <li>+234 800 000 0000</li>
+                <li>info@kuwaittravel.ng</li>
+                <li>Lagos, Nigeria</li>
+              </ul>
+            </div>
           </div>
 
-          {/* Quick Links */}
-          <div>
-            <h4 className="font-bold mb-4">Quick Links</h4>
-            <ul className="space-y-2 text-sm opacity-80">
-              <li><a href="#services" className="hover:text-accent transition-colors">Services</a></li>
-              <li><a href="#contact" className="hover:text-accent transition-colors">Contact</a></li>
-              <li><a href="#" className="hover:text-accent transition-colors">About Us</a></li>
-              <li><a href="#" className="hover:text-accent transition-colors">FAQ</a></li>
-            </ul>
+          <div className="pt-8 border-t border-background/10 text-center text-sm text-background/70 font-light">
+            <p>&copy; {new Date().getFullYear()} Kuwait Travel & Passport Services. All rights reserved.</p>
           </div>
-
-          {/* Services */}
-          <div>
-            <h4 className="font-bold mb-4">Services</h4>
-            <ul className="space-y-2 text-sm opacity-80">
-              <li>Kuwait Travel Packages</li>
-              <li>International Passport</li>
-              <li>Visa Services</li>
-              <li>Hotel Bookings</li>
-            </ul>
-          </div>
-
-          {/* Contact */}
-          <div>
-            <h4 className="font-bold mb-4">Contact</h4>
-            <ul className="space-y-3 text-sm opacity-80">
-              <li className="flex items-center gap-2">
-                <Phone className="w-4 h-4" />
-                <span>+234 800 000 0000</span>
-              </li>
-              <li className="flex items-center gap-2">
-                <Mail className="w-4 h-4" />
-                <span>info@kuwaittravel.ng</span>
-              </li>
-              <li className="flex items-center gap-2">
-                <MapPin className="w-4 h-4" />
-                <span>Lagos, Nigeria</span>
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        <div className="border-t border-primary-foreground/20 pt-8 text-center text-sm opacity-80">
-          <p>&copy; {new Date().getFullYear()} Kuwait Travel & Passport Services. All rights reserved.</p>
         </div>
       </div>
     </footer>
