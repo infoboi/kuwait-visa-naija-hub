@@ -33,8 +33,8 @@ const Process = () => {
           {/* Header */}
           <div 
             ref={headerRef}
-            className={`max-w-2xl mb-20 transition-all duration-800 ${
-              headerVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+            className={`max-w-2xl mb-20 transition-all duration-1000 ease-out ${
+              headerVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
             }`}
           >
             <h2 className="text-4xl md:text-5xl font-light tracking-tight text-foreground mb-6">
@@ -53,10 +53,10 @@ const Process = () => {
                 <div 
                   key={index} 
                   ref={ref}
-                  className={`relative transition-all duration-800 ${
-                    isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+                  className={`relative transition-all duration-1000 ease-out ${
+                    isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
                   }`}
-                  style={{ transitionDelay: `${index * 150}ms` }}
+                  style={{ transitionDelay: `${index * 200}ms` }}
                 >
                   {/* Connector Line */}
                   {index < steps.length - 1 && (

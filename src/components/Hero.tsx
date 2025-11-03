@@ -66,8 +66,8 @@ const Hero = () => {
           {/* Image with Lazy Loading */}
           <div 
             ref={imageRef}
-            className={`relative lg:h-[600px] h-[400px] rounded-2xl overflow-hidden shadow-medium transition-all duration-1000 ${
-              imageVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-12'
+            className={`relative lg:h-[600px] h-[400px] rounded-2xl overflow-hidden shadow-medium transition-all duration-[1200ms] ease-out ${
+              imageVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'
             }`}
           >
             <img 
